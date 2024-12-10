@@ -1,0 +1,20 @@
+ncsim(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> deposit vedic8x8.a = 8'hEF 8'hAB -after 11ns -relative -repeat 22ns
+ncsim> deposit vedic8x8.b = 8'hFA 8'hBC -after 11ns -relative -repeat 22ns
+ncsim> deposit vedic8x8.clk = 'b1 'b0 -after 0.5ns -relative -repeat 1ns
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create vedic8x8.a vedic8x8.b vedic8x8.clk vedic8x8.result -database waves -waveform
+Created probe 1
+ncsim> stop -create -time 50ns -absolute
+Created stop 1
+ncsim> run
+50 NS + 0 (stop 1)
+ncsim> ^C
+ncsim> exit
+ncsim: Memory Usage - 38.6M program + 281.6M data = 320.2M total (323.8M Peak)
+ncsim: CPU Usage - 3.8s system + 3.9s user = 7.7s total (383.1s, 2.0% cpu)
